@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <script src="./Timetables.min.js"></script>
+    <title>我的課表</title>
+    <style>
+        #coursesTable {
+            padding: 15px 10px;
+        }
+        
+        .Courses-head {
+            background-color: #edffff;
+        }
+        
+        .Courses-head>div {
+            text-align: center;
+            font-size: 14px;
+            line-height: 28px;
+        }
+        
+        .left-hand-TextDom,
+        .Courses-head {
+            background-color: #f2f6f7;
+        }
+        
+        .Courses-leftHand {
+            background-color: #f2f6f7;
+            font-size: 12px;
+        }
+        
+        .Courses-leftHand .left-hand-index {
+            color: #9c9c9c;
+            margin-bottom: 4px !important;
+        }
+        
+        .Courses-leftHand .left-hand-name {
+            color: #666;
+        }
+        
+        .Courses-leftHand p {
+            text-align: center;
+            font-weight: 900;
+        }
+        
+        .Courses-head>div {
+            border-left: none !important;
+        }
+        
+        .Courses-leftHand>div {
+            padding-top: 5px;
+            border-bottom: 1px dashed rgb(219, 219, 219);
+        }
+        
+        .Courses-leftHand>div:last-child {
+            border-bottom: none !important;
+        }
+        
+        .left-hand-TextDom,
+        .Courses-head {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .Courses-content>ul {
+            border-bottom: 1px dashed rgb(219, 219, 219);
+            box-sizing: border-box;
+        }
+        
+        .Courses-content>ul:last-child {
+            border-bottom: none !important;
+        }
+        
+        .highlight-week {
+            color: #02a9f5 !important;
+        }
+        
+        .Courses-content li {
+            text-align: center;
+            color: #666666;
+            font-size: 14px;
+            line-height: 50px;
+        }
+        
+        .Courses-content li span {
+            padding: 6px 2px;
+            box-sizing: border-box;
+            line-height: 18px;
+            border-radius: 4px;
+            white-space: normal;
+            word-break: break-all;
+            cursor: pointer;
+        }
+        
+        .grid-active {
+            z-index: 9999;
+        }
+        
+        .grid-active span {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        [大二下課表]
+    </h1>
+
+    <ul>
+        <li>姓名:馬紹勻</li>
+        <li>系級:生工二</li>
+        <li>學號:B06602022</li>
+    </ul>
+
+    <div id="coursesTable"></div>
+    <script>
+        var courseList = [
+            ['', '', '', '', '', '水文學', '水文學', '水文學', '', '', '', ''],
+            ['', '', '', '', '國會憲政與民主', '國會憲政與民主', '高爾夫', '高爾夫', '', '前端程式設計', '前端程式設計', '前端程式設計'],
+            ['水質汙染', '水質汙染', '水質汙染', '', '', '', '', '', '', '', '', ''],
+            ['工程數學二', '工程數學二', '工程數學二', '', '衛生保健', '衛生保健', '現代生物學之應用', '現代生物學之應用', '', '', '', ''],
+            ['統計學', '統計學', '', '', '', '', '', '', '', '', '', ''],
+        ];
+        var week = window.innerWidth > 360 ? ['週一', '週二', '週三', '週四', '週五'] : ['一', '二', '三', '四', '五'];
+        var day = new Date().getDay();
+        var courseType = [
+            [{
+                index: '2',
+                name: '9:30'
+            }, 1],
+            [{
+                index: '3',
+                name: '10:30'
+            }, 1],
+            [{
+                index: '4',
+                name: '11:30'
+            }, 1],
+            [{
+                index: '5',
+                name: '12:30'
+            }, 1],
+            [{
+                index: '6',
+                name: '14:30'
+            }, 1],
+            [{
+                index: '7',
+                name: '15:30'
+            }, 1],
+            [{
+                index: '8',
+                name: '16:30'
+            }, 1],
+            [{
+                index: '9',
+                name: '17:30'
+            }, 1],
+            [{
+                index: '10',
+                name: '18:30'
+            }, 1],
+            [{
+                index: 'A',
+                name: '19:30'
+            }, 1],
+            [{
+                index: 'B',
+                name: '20:30'
+            }, 1],
+            [{
+                index: 'C',
+                name: '21:30'
+            }, 1]
+        ];
+        // 实例化(初始化课表)
+        var Timetable = new Timetables({
+            el: '#coursesTable',
+            timetables: courseList,
+            week: week,
+            timetableType: courseType,
+            highlightWeek: day,
+            gridOnClick: function(e) {
+                alert(e.name + '  ' + e.week + ', 第' + (e.index + 1) + '節課, 課長' + e.length + '節');
+                console.log(e);
+            },
+            styles: {
+                Gheight: 50
+            }
+        });
+    </script>
+</body>
+
+</html>
