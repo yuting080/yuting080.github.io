@@ -1,0 +1,31 @@
+img {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 10em;
+    margin-left: 2em;
+    margin-top: 2em;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    box-shadow: 0em 0em 20px 0px #e84cd3eb;
+}
+
+.table {
+    position: absolute;
+    margin-left: 13em;
+    text-align: center;
+}
+
+td {
+    border-top: 0.18em solid #795548de;
+}
+
+#section1 {
+    background-color: #80808069;
+}
+
+#section2 {
+    background-color: #9a7a4b85;
+    height: 50em;
+    width: 100%;
+}
