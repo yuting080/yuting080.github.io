@@ -1,11 +1,9 @@
-h1 {
-    color: blue;
-    font-size: 26pt;
+#section1 {
+    background-color: #9e9e9ec4;
 }
 
-img {
-    width: 250px;
-    height: 250px;
-    color: #8BC34A;
-    background: grey;
+#section2 {
+    background-color: #cddc39cf;
+    height: 50em;
+    width: 100%;
 }
