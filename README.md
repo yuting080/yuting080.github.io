@@ -17,20 +17,15 @@ Reference:
     1.進度條參考網站:
     https://blog.csdn.net/boss2967/article/details/79197311
     修改部分: 各種參數、透過計算改成自己想要的模式
-    /
     2.長條圖參考網站:
     https://codepen.io/Han/pen/kflHF
     修改部分: 各種參數、透過計算改成自己想要的模式
-    /
     3.導覽列hover效果參考網站:
     https://www.great-good.tw/articles/css-hover/
     修改部分: 各種參數、顏色
-    /
     4.圖片來源:
     https://www.google.com.tw/search?rlz=1C1CHZL_zh-TWTW755TW755&biw=1536&bih=750&tbm=isch&sa=1&ei=DdO9XJDkKMmM8gX_sZv4DA&q=double+major&oq=double+major&gs_l=img.3..0i19l10.11142.14934..15083...1.0..1.75.590.13......2....1..gws-wiz-img.....0..0j0i30.lU8sEVwQ6cM#imgrc=OJGmciGjwDl-eM:
-    /
     https://www.google.com.tw/search?q=personality&rlz=1C1CHZL_zh-TWTW755TW755&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjuxI3SgeThAhUa7rwKHZ6pDt4Q_AUIDigB&biw=1536&bih=710#imgrc=GrTIK8HQro68wM:
-    /
     https://www.google.com.tw/search?rlz=1C1CHZL_zh-TWTW755TW755&biw=1536&bih=710&tbm=isch&sa=1&ei=idu9XKKuMq61mAWj146IDg&q=hobbies&oq=hobbies&gs_l=img.3..0l3j0i30l7.15101.16622..16722...1.0..0.44.330.8......1....1..gws-wiz-img.......0i10i24.Tczgf4XRR5k#imgrc=TW5QKxgg2N_cuM:
     
     
