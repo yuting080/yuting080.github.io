@@ -41,14 +41,19 @@ $(document).ready(function() {
         // 插入分頁數字
         for (var i = 1; i <= pageNum; i++) {
             $a = $('<a>').attr('class', 'page-link').attr('href', '#').text(i)
-
+            var k = 000
             $a.on('click', function() {
                 var i = $(this).text()
                 showItems(Number(i))
+                k = Number(i)
             })
 
-            var strActive = ((i == 1) ? ' active' : '')
-            $li = $('<li>').attr('class', 'page-item' + strActive).append($a)
+            if (k == i) {
+                $li = $('<li>').attr('class', 'page-item active').append($a)
+            } else {
+                $li = $('<li>').attr('class', 'page-item').append($a)
+            }
+            $li = $('<li>').attr('class', 'page-item').append($a)
             $('#page-number').append($li)
         }
 
