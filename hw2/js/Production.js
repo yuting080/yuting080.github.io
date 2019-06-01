@@ -41,23 +41,19 @@ $(document).ready(function() {
         // 插入分頁數字
         for (var i = 1; i <= pageNum; i++) {
             $a = $('<a>').attr('class', 'page-link').attr('href', '#').text(i)
-            var k = 000
+            var nowpage = i
+            $('#next')
             $a.on('click', function() {
                 var i = $(this).text()
                 showItems(Number(i))
-                k = Number(i)
             })
 
-            if (k == i) {
-                $li = $('<li>').attr('class', 'page-item active').append($a)
-            } else {
-                $li = $('<li>').attr('class', 'page-item').append($a)
-            }
-            $li = $('<li>').attr('class', 'page-item').append($a)
+            var strActive = ((i == 1) ? ' active' : '')
+            $li = $('<li>').attr('class', 'page-item' + strActive).append($a)
             $('#page-number').append($li)
         }
 
-        $ra = $('<a>').attr('class', 'page-link').attr('href', '#').text('下一頁')
+        $ra = $('<a>').attr('class', 'page-link next').attr('href', '#').text('下一頁')
         $rli = $('<li>').attr('class', 'page-item').append($ra)
         $('#page-number').append($rli)
     }
