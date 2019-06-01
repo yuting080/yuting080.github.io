@@ -34,17 +34,17 @@ $(document).ready(function() {
 
         $('#page-number').empty()
 
-        $la = $('<a>').attr('class', 'page-link').attr('href', '#').attr('tabindex', '-1').attr('aria-disabled', 'true').text('上一頁')
-        $lli = $('<li>').attr('class', 'page-item').addClass('disabled').append($la)
+        $la = $('<a>').attr('class', 'page-link').attr('href', '#').attr('tabindex', '-1').attr('id', 'front').text('上一頁')
+        $lli = $('<li>').attr('class', 'page-item').append($la)
         $('#page-number').append($lli)
 
         // 插入分頁數字
         for (var i = 1; i <= pageNum; i++) {
             $a = $('<a>').attr('class', 'page-link').attr('href', '#').text(i)
-            var nowpage = i
-            $('#next')
+            var nowpage = 1
             $a.on('click', function() {
                 var i = $(this).text()
+                nowpage = Number(i)
                 showItems(Number(i))
             })
 
@@ -53,9 +53,33 @@ $(document).ready(function() {
             $('#page-number').append($li)
         }
 
-        $ra = $('<a>').attr('class', 'page-link next').attr('href', '#').text('下一頁')
+        $ra = $('<a>').attr('class', 'page-link next').attr('id', 'next').attr('href', '#').text('下一頁')
+
         $rli = $('<li>').attr('class', 'page-item').append($ra)
         $('#page-number').append($rli)
+
+        //隔頁功能
+        $('#next').on('click', function() {
+            console.log(nowpage)
+            if (nowpage == 1) {
+                showItems(2)
+                nowpage += 1
+            } else if (nowpage == 8) {
+                showItems(8)
+            } else {
+                showItems(nowpage + 1)
+                nowpage += 1
+            }
+        })
+        $('#front').on('click', function() {
+            console.log(nowpage)
+            if (nowpage == 1) {
+                showItems(1)
+            } else {
+                showItems(nowpage - 1)
+                nowpage -= 1
+            }
+        })
     }
 
     $('#query').on('click', function() {
