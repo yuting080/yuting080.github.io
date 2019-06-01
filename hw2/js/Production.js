@@ -34,7 +34,7 @@ $(document).ready(function() {
 
         $('#page-number').empty()
 
-        $la = $('<a>').attr('class', 'page-link').attr('href', '#').attr('tabindex', '-1').attr('aria-disabled', 'true').text('«')
+        $la = $('<a>').attr('class', 'page-link').attr('href', '#').attr('tabindex', '-1').attr('aria-disabled', 'true').text('上一頁')
         $lli = $('<li>').attr('class', 'page-item').addClass('disabled').append($la)
         $('#page-number').append($lli)
 
@@ -52,7 +52,7 @@ $(document).ready(function() {
             $('#page-number').append($li)
         }
 
-        $ra = $('<a>').attr('class', 'page-link').attr('href', '#').text('»')
+        $ra = $('<a>').attr('class', 'page-link').attr('href', '#').text('下一頁')
         $rli = $('<li>').attr('class', 'page-item').append($ra)
         $('#page-number').append($rli)
     }
