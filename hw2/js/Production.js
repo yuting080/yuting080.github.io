@@ -54,7 +54,6 @@ $(document).ready(function() {
         }
 
         $ra = $('<a>').attr('class', 'page-link next').attr('id', 'next').attr('href', '#').text('下一頁')
-
         $rli = $('<li>').attr('class', 'page-item').append($ra)
         $('#page-number').append($rli)
 
