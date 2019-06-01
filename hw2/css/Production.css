@@ -2,6 +2,11 @@ a {
     color: white
 }
 
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
 .jumbotron {
     background-color: #3F51B5;
     color: white;
