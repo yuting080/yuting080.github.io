@@ -4,6 +4,7 @@ $(document).ready(function() {
     // 清空 product-list
     $('#product-list').empty();
     $('#page').hide()
+    $('#datanum').hide()
 
     var items = null
     var pageCount = 20
@@ -128,6 +129,17 @@ $(document).ready(function() {
                     $('#page').show()
                     newPage(items.length)
 
+                    //資料數量
+                    $('#datanum').empty()
+                    $icon = $('<i>').attr('class', 'fas fa-angle-double-right')
+                    $olli = $('<li>').attr('class', 'breadcrumb-item active').attr('aria-current', 'page').text('>  搜尋到 ' + items.length + ' 筆資料  <')
+                    $ol = $('<ol>').attr('class', 'breadcrumb').append($olli)
+                    $nav = $('<nav>').attr('aria-label', 'breadcrumb').append($ol)
+                    $('#datanum').append($nav)
+                    $('#datanum').show()
+
+
+                    //當前頁面顯示第一頁
                     $('#nowpage').empty()
                     $p = $('<p>').text('>' + '當前頁面 : 第' + '1' + '頁' + '<')
                     $('#nowpage').append($p)
