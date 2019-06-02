@@ -40,16 +40,25 @@ $(document).ready(function() {
 
         // 插入分頁數字
         for (var i = 1; i <= pageNum; i++) {
-            $a = $('<a>').attr('class', 'page-link').attr('href', '#').text(i)
+            $a = $('<a>').attr('class', 'page-link').attr('href', '#').attr('id', 'num').text(i)
+
             var nowpage = 1
+
+            $('#nowpage').empty()
+
             $a.on('click', function() {
                 var i = $(this).text()
-                nowpage = Number(i)
                 showItems(Number(i))
+                nowpage = Number(i)
+                $('#nowpage').empty()
+                $p = $('<p>').attr('id', 'nowpagenum').text('>' + '當前頁面 : 第' + nowpage + '頁' + '<')
+                $('#nowpage').append($p)
+                $('#nowpage').show()
+                return nowpage
+
             })
 
-            var strActive = ((i == 1) ? ' active' : '')
-            $li = $('<li>').attr('class', 'page-item' + strActive).append($a)
+            $li = $('<li>').attr('class', 'page-item').append($a)
             $('#page-number').append($li)
         }
 
@@ -57,26 +66,47 @@ $(document).ready(function() {
         $rli = $('<li>').attr('class', 'page-item').append($ra)
         $('#page-number').append($rli)
 
-        //隔頁功能
+        //隔頁功能，同時加入當前頁面顯示
         $('#next').on('click', function() {
-            console.log(nowpage)
+            $('#nowpage').empty()
             if (nowpage == 1) {
                 showItems(2)
                 nowpage += 1
+                $p = $('<p>').attr('id', 'nowpagenum').text('>' + '當前頁面 : 第' + nowpage + '頁' + '<')
+                $('#nowpage').append($p)
+                $('#nowpage').show()
+                return nowpage
             } else if (nowpage == 8) {
+                console.log('8')
                 showItems(8)
+                $p = $('<p>').attr('id', 'nowpagenum').text('>' + '當前頁面 : 第' + nowpage + '頁' + '<')
+                $('#nowpage').append($p)
+                $('#nowpage').show()
+                alert('這是最後一頁喔!')
             } else {
                 showItems(nowpage + 1)
                 nowpage += 1
+                $p = $('<p>').attr('id', 'nowpagenum').text('>' + '當前頁面 : 第' + nowpage + '頁' + '<')
+                $('#nowpage').append($p)
+                $('#nowpage').show()
+                return nowpage
             }
         })
         $('#front').on('click', function() {
-            console.log(nowpage)
+            $('#nowpage').empty()
             if (nowpage == 1) {
                 showItems(1)
+                $p = $('<p>').attr('id', 'nowpagenum').text('>' + '當前頁面 : 第' + '1' + '頁' + '<')
+                $('#nowpage').append($p)
+                $('#nowpage').show()
+                alert('這是第一頁喔!')
             } else {
                 showItems(nowpage - 1)
                 nowpage -= 1
+                $p = $('<p>').attr('id', 'nowpagenum').text('>' + '當前頁面 : 第' + nowpage + '頁' + '<')
+                $('#nowpage').append($p)
+                $('#nowpage').show()
+                return nowpage
             }
         })
     }
@@ -87,12 +117,9 @@ $(document).ready(function() {
                 // 伺服器有回傳資料
                 if (response.result) {
                     $('#product-list').empty();
+
                     // 資料庫有回傳資料
                     items = response.items
-
-                    // for (var i = 0; i < items.length; i++) {
-                    //     newItem(items[i])
-                    // }
 
                     // 加了分頁效果，預設顯示第一頁
                     showItems(1)
@@ -100,6 +127,11 @@ $(document).ready(function() {
                     // 顯示分頁和設定分頁的函式
                     $('#page').show()
                     newPage(items.length)
+
+                    $('#nowpage').empty()
+                    $p = $('<p>').text('>' + '當前頁面 : 第' + '1' + '頁' + '<')
+                    $('#nowpage').append($p)
+                    $('#nowpage').show()
 
                 } else {
                     $('#message').text('查無相關資料')
