@@ -77,9 +77,9 @@ $(document).ready(function() {
                 $('#nowpage').append($p)
                 $('#nowpage').show()
                 return nowpage
-            } else if (nowpage == 8) {
-                console.log('8')
-                showItems(8)
+            } else if (nowpage == 9) {
+                console.log('9')
+                showItems(9)
                 $p = $('<p>').attr('id', 'nowpagenum').text('>' + '當前頁面 : 第' + nowpage + '頁' + '<')
                 $('#nowpage').append($p)
                 $('#nowpage').show()
