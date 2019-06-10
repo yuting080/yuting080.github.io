@@ -108,7 +108,3 @@ function incrementCounter() {
     // 顯示當前步數
     $('.score-display').text(score);
 }
-
-// function playAgain() {
-//     location.reload();
-// }
