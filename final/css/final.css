@@ -29,7 +29,7 @@ h1 {
     z-index: 10;
 }
 
-#scoreboard {
+#point {
     opacity: 0;
     position: absolute;
     left: 1em;
@@ -37,13 +37,13 @@ h1 {
     color: black;
 }
 
-#scoreboard:before {
+#point:before {
     content: 'moves ';
     font-size: 0.8em;
     color: black;
 }
 
-#gameBoard {
+#view {
     height: 53em;
     display: flex;
     position: relative;
@@ -133,7 +133,7 @@ h1 {
     top: -12rem;
 }
 
-.button-row {
+.btn-row {
     display: flex;
     margin: 4rem auto 1rem auto;
     width: 70%;
@@ -155,7 +155,7 @@ button:hover {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-#win {
+#finish {
     position: absolute;
     z-index: 1;
     text-align: center;
@@ -166,7 +166,7 @@ button:hover {
     width: 100%;
 }
 
-#win h2 {
+#finish h2 {
     position: absolute;
     z-index: 1;
     text-align: center;

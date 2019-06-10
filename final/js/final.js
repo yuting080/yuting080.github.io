@@ -11,16 +11,16 @@ function start() {
 
     // 加入碟片層數到遊玩介面
     for (var i = 1; i <= Count; i++) {
-        $layer = $('<div>').attr('class', 'disc layer' + i).attr('data-layer', i)
+        $kk = $('<div>').attr('class', 'disc layer' + i).attr('data-layer', i)
             //在第一個柱子加上對應層數
-        $('#col1').append($layer);
+        $('#col1').append($kk);
     }
     // 顯示遊玩介面
-    $('#scoreboard').fadeTo(600, 1);
+    $('#point').fadeTo(600, 1);
     $('.column').fadeTo(600, 1);
 
     // 設置移動步數初始值
-    $('#gameBoard').data('score', 0);
+    $('#view').data('point', 0);
 }
 
 
@@ -29,84 +29,84 @@ $('.column').on('click', select);
 function select() {
 
     // 點選的柱子
-    var $thisColumn = $(this);
+    var $thiscol = $(this);
     // 尋找被選中的柱子其中的所有碟片
-    var $selectedColumns = $('#gameBoard').find('.column.selected');
+    var $selectcol = $('#view').find('.column.selected');
     // 指定最上層碟片(若有)
-    var $selectedColumn = ($selectedColumns.length > 0) ? $($selectedColumns.get(0)) : false;
+    var $toplayer = ($selectcol.length > 0) ? $($selectcol.get(0)) : false;
 
     // 將選到的碟片抬高(配合css)
-    if (!$selectedColumn) {
-        $thisColumn.addClass('selected');
+    if (!$toplayer) {
+        $thiscol.addClass('selected');
         return;
     }
     // 下降碟片(配合css)
-    if ($selectedColumn.attr('id') == $thisColumn.attr('id')) {
-        $thisColumn.removeClass('selected');
+    if ($toplayer.attr('id') == $thiscol.attr('id')) {
+        $thiscol.removeClass('selected');
         return;
     }
 
     // 檢測符合規則後，開始移動碟片
-    if (_validMove($selectedColumn, $thisColumn)) {
+    if (move($toplayer, $thiscol)) {
 
         // 取得選擇的碟片並將其從原本的柱子刪除
-        var $disc = $($selectedColumn.children('.disc').get(0)).detach();
+        var $disc = $($toplayer.children('.disc').get(0)).detach();
 
         // 將選擇的碟片加入慾選的柱子
-        $thisColumn.prepend($disc);
+        $thiscol.prepend($disc);
 
         // 下降碟片(配合css)
-        $selectedColumn.removeClass('selected');
+        $toplayer.removeClass('selected');
 
         // 執行步數計算與檢測機制
-        incrementCounter();
-        _checkWin();
+        stepcount();
+        checking();
     }
 }
 
 // 遊戲規則
-function _validMove($from, $to) {
+function move($ini, $end) {
 
     // 判斷欲移動的柱子位置是否有碟片存在
-    if ($from.children('.disc').length == 0) return false;
+    if ($ini.children('.disc').length == 0) return false;
 
     // 判斷欲移動到的位置是否有碟片存在
-    if ($to.children('.disc').length == 0) return true;
+    if ($end.children('.disc').length == 0) return true;
 
     // 取得欲移動柱子上的第一片
-    var $topOfFrom = $($from.children('.disc').get(0));
+    var $initop = $($ini.children('.disc').get(0));
 
     // 取得欲移動到柱子上的第一片
-    var $topOfTo = $($to.children('.disc').get(0));
+    var $endtop = $($end.children('.disc').get(0));
 
     // 檢查欲移動到柱子上的第一片是否大於欲移動的碟片
-    return +$topOfTo.data('layer') > +$topOfFrom.data('layer');
+    return +$endtop.data('layer') > +$initop.data('layer');
 }
 
 // 遊戲結束檢查機制
-function _checkWin() {
+function checking() {
 
     // 第一跟第二柱上碟片都已被清空
     if ($('#col1').children('.disc').length == 0 && $('#col2').children('.disc').length == 0) {
 
         // 遊戲介面消失
         $('.column').hide();
-        $('#scoreboard').hide();
+        $('#point').hide();
 
         // 遊戲完成~
-        $('#win').fadeTo(600, 1)
+        $('#finish').fadeTo(600, 1)
     }
 }
 
 // 步數計算器
-function incrementCounter() {
+function stepcount() {
 
     // 當碟片移動成宮則將步數加
-    var score = $('#gameBoard').data('score') + 1;
+    var score = $('#view').data('point') + 1;
 
     // 將步數記錄下來
-    $('#gameBoard').data('score', score);
+    $('#view').data('point', score);
 
     // 顯示當前步數
-    $('.score-display').text(score);
+    $('.point-display').text(score);
 }
