@@ -1,20 +1,19 @@
-$('.difficulty-btn').on('click', playGame);
-$('.column').on('click', selectOrMoveTopDisc);
+$('.difbtn').on('click', start);
 
-function playGame() {
+function start() {
 
     // 隱藏選擇介面
-    $('#options').hide()
+    $('#opt').hide()
     $('.jumbotron').hide()
 
     // 依據選擇的難度分配碟片層數
-    var layerCount = $(this).data('layers');
+    var Count = $(this).data('layers');
 
     // 加入碟片層數到遊玩介面
-    for (var i = 1; i <= layerCount; i++) {
+    for (var i = 1; i <= Count; i++) {
         $layer = $('<div>').attr('class', 'disc layer' + i).attr('data-layer', i)
             //在第一個柱子加上對應層數
-        $('#column1').append($layer);
+        $('#col1').append($layer);
     }
     // 顯示遊玩介面
     $('#scoreboard').fadeTo(600, 1);
@@ -24,7 +23,10 @@ function playGame() {
     $('#gameBoard').data('score', 0);
 }
 
-function selectOrMoveTopDisc() {
+
+$('.column').on('click', select);
+
+function select() {
 
     // 點選的柱子
     var $thisColumn = $(this);
@@ -85,7 +87,7 @@ function _validMove($from, $to) {
 function _checkWin() {
 
     // 第一跟第二柱上碟片都已被清空
-    if ($('#column1').children('.disc').length == 0 && $('#column2').children('.disc').length == 0) {
+    if ($('#col1').children('.disc').length == 0 && $('#col2').children('.disc').length == 0) {
 
         // 遊戲介面消失
         $('.column').hide();
