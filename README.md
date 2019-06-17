@@ -1,43 +1,33 @@
-前端期中作業-個人履歷
+# 前端期末專題報告-網頁設計
 
-[ B06602022 生工二 馬紹勻]
+## [ B06602022 生工二 馬紹勻]
 
-#檔案名稱是Profile.html，我在index裡也有放連結，都可以找的到~
 
-template:
 
-    在嘗試了眾多模板後，深刻體會到要修改別人的模板內容是多麼麻煩xD ，因此我最後打算自己劃分排版，沒有採用任何template。
+**期末專題主題 - 小型益智遊戲-河內塔**
+---
+> 使用方式
+* 閱讀遊戲規則 
+* 選擇難易度
+* 進行遊戲
+* 遊戲完成(可看使用步數來比較強弱)
 
-網站特色:
+> 使用技術
 
-    1.重要資訊顯眼--聯絡資料放在重點區域
-    
-    2.精簡--將五大重點放在導覽列 快速釐清內容
-    
-    3.右上輪播簡介:將重點再濃縮，變成個人主軸
-    
-    4.配合動態進度圖將學歷部分視覺化
-    
-    5.配合動態長條圖將技能部分視覺化
-    
-    6.在經歷部分提供相關官方網站
-    
-    7.最後附上"更多關於我"的各種社交網站及作品網站，並在圖案附上連結，
+  雖然css的部分也弄了很久，但主要技術還是集中於js，以下簡介~
 
-Reference:
+* 當選擇完難易度則隱藏選擇介面`(hide())`
+* 讀取難易度`($(this).data())`
+* 創造碟片並加入柱子上`($('<div>'))`
+* 顯示遊戲進行介面`fadeTo()`
+* 用js配合css，例如:用js判斷要不要加上/移除特定selecter，加了則會自動套用css/移除的話css則會消失，造成變化
+* 取得選擇的碟片並將其從原本的柱子刪除(`detach()`可刪除但保留資料，以便後續加入)
+* 使用`prepend()`將剛才detach掉的資料加在順序"最前面"
+* 使用對子元素操作的函式`children()`
+* 在return的內容中加入大小碟片比較(遊戲關鍵規則)，使其產生布林值，進入下一階段函式<第83行>
+* 使用`data('','')`對特定元素新增變數，用來計算步數
 
-    1.進度條參考網站:
-    https://blog.csdn.net/boss2967/article/details/79197311
-    修改部分: 各種參數、透過計算改成自己想要的模式
-    2.長條圖參考網站:
-    https://codepen.io/Han/pen/kflHF
-    修改部分: 各種參數、透過計算改成自己想要的模式
-    3.導覽列hover效果參考網站:
-    https://www.great-good.tw/articles/css-hover/
-    修改部分: 各種參數、顏色
-    4.圖片來源:
-    https://www.google.com.tw/search?rlz=1C1CHZL_zh-TWTW755TW755&biw=1536&bih=750&tbm=isch&sa=1&ei=DdO9XJDkKMmM8gX_sZv4DA&q=double+major&oq=double+major&gs_l=img.3..0i19l10.11142.14934..15083...1.0..1.75.590.13......2....1..gws-wiz-img.....0..0j0i30.lU8sEVwQ6cM#imgrc=OJGmciGjwDl-eM:
-    https://www.google.com.tw/search?q=personality&rlz=1C1CHZL_zh-TWTW755TW755&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjuxI3SgeThAhUa7rwKHZ6pDt4Q_AUIDigB&biw=1536&bih=710#imgrc=GrTIK8HQro68wM:
-    https://www.google.com.tw/search?rlz=1C1CHZL_zh-TWTW755TW755&biw=1536&bih=710&tbm=isch&sa=1&ei=idu9XKKuMq61mAWj146IDg&q=hobbies&oq=hobbies&gs_l=img.3..0l3j0i30l7.15101.16622..16722...1.0..0.44.330.8......1....1..gws-wiz-img.......0i10i24.Tczgf4XRR5k#imgrc=TW5QKxgg2N_cuM:
-    
-    
+> 網站特色
+* 有三種難度可以選擇，具挑戰性
+* 在使用者移動的同時也計算走過的步數，最後呈現總步數提供實力參考
+* 在nav bar上的"聯絡我"可直接連到我的個人網頁
