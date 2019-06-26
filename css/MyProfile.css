@@ -1,0 +1,541 @@
+#wrapper {
+    position: relative;
+    margin: 0 auto;
+    box-shadow: -10px 10px 50px;
+    font-family: Microsoft JhengHei;
+}
+
+@media (max-width: 700px) {
+    #wrapper {
+        position: relative;
+        box-shadow: 0 0 0;
+        top: 0px;
+        left: 0px;
+        padding-left: 450px
+    }
+}
+
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row>[class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.row>[class*='col-']:nth-of-type(1) {
+    background-color: #c4c1c1;
+}
+
+.row>[class*='col-']:nth-of-type(2) {
+    background-color: #ffffff;
+}
+
+.globalHR {
+    position: relative;
+    width: 75%;
+    max-width: 300px;
+    font-size: 1px;
+    color: rgba(0, 0, 0, 0);
+    line-height: 2px;
+    background-color: #333333;
+    margin: 20px 0px 20px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    height: auto;
+    text-align: center;
+}
+
+.header h1 {
+    padding: 30px 0px 40px 0px;
+    margin: 0px;
+    font-size: 4em;
+    font-weight: 900;
+}
+
+.header span {
+    padding: 0px;
+    margin: 0px;
+    font-size: 5em;
+}
+
+.header h2 {
+    padding: 30px 0px 0px 0px;
+    margin: 0px;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.info {
+    height: auto;
+    text-align: center;
+}
+
+.info h2 {
+    padding: 20px 0px 20px 0px;
+    margin: 0px;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.info span {
+    padding: 0px;
+    margin: 0px;
+    font-size: 2.5em;
+    padding: 0px 0px 20px 0px;
+}
+
+.info h4 {
+    padding: 20px 0px 0px 0px;
+    margin: 0px;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    text-align: left;
+    padding-left: 55px;
+}
+
+.img1 {
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+    margin: auto;
+    box-shadow: 0em 0em 20px 0px #cddc39;
+}
+
+.img2 {
+    height: 420px;
+    width: 740px
+}
+
+.chname {
+    padding-top: 7px;
+    font-size: 30px;
+}
+
+.icon {
+    text-align: center;
+    font-size: 60px;
+}
+
+.more {
+    font-size: 25px;
+    text-align: center
+}
+
+.fab {
+    color: black
+}
+
+#Education {
+    background-color: #ffffff;
+    ;
+}
+
+#eduicon {
+    font-size: 22px
+}
+
+#kk1 {
+    padding-left: 83px
+}
+
+#kk2 {
+    padding-left: 65px
+}
+
+#tt1 {
+    padding-left: 48px;
+}
+
+#tt2 {
+    padding-left: 35px;
+}
+
+#col3 {
+    padding-left: 28px;
+    padding-right: 0px;
+}
+
+.card-title {
+    font-weight: 700
+}
+
+#hobbies {
+    background-color: #cddc39db;
+}
+
+#hobbies p {
+    padding-left: 14px
+}
+
+#hobbies h3 {
+    font-size: 25px;
+}
+
+.bg-light {
+    background-color: #d3de69!important;
+}
+
+.nav-link {
+    color: black
+}
+
+.card {
+    background-color: #ffffff;
+}
+
+.contitle-h4 {
+    font-size: 1.8rem;
+    font-weight: 900
+}
+
+.nav-item a {
+    color: #795548;
+    font-weight: 900
+}
+
+
+/*引用進度條方法 */
+
+#progressBar {
+    width: 80%;
+    height: 50px;
+    position: relative;
+    margin: 50px 0 0 100px;
+}
+
+#progressBar div {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -20px;
+    background: #bcb8b8;
+}
+
+#progressBar div span {
+    position: absolute;
+    display: inline-block;
+    background: green;
+    height: 10px;
+    width: 40%;
+    -webkit-animation: bgLoad 2.5s linear;
+}
+
+@-webkit-keyframes bgLoad {
+    0% {
+        width: 0%;
+    }
+    40%,
+    60% {
+        width: 25%;
+    }
+    80% {
+        width: 40%
+    }
+}
+
+#progressBar>span {
+    position: absolute;
+    top: 0;
+    margin-top: -10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #bcb8b8;
+    color: #fff;
+}
+
+@-webkit-keyframes circleLoad_1 {
+    0%,
+    66.66% {
+        background: #bcb8b8;
+    }
+    100% {
+        background: green;
+    }
+}
+
+@-webkit-keyframes circleLoad_2 {
+    0%,
+    83.34% {
+        background: #bcb8b8;
+    }
+    100% {
+        background: #ccc;
+    }
+}
+
+@-webkit-keyframes circleLoad_3 {
+    0%,
+    88.88% {
+        background: #bcb8b8;
+    }
+    100% {
+        background: #bcb8b8;
+    }
+}
+
+@-webkit-keyframes circleLoad_4 {
+    0%,
+    91.67% {
+        background: #bcb8b8;
+    }
+    100% {
+        background: #bcb8b8;
+    }
+}
+
+#progressBar span:nth-child(2) {
+    left: 0%;
+    background: green;
+}
+
+#progressBar span:nth-child(3) {
+    left: 25%;
+    background: green;
+    -webkit-animation: circleLoad_1 1.5s ease-in;
+}
+
+#progressBar span:nth-child(4) {
+    left: 50%;
+    background: #bcb8b8;
+}
+
+#progressBar span:nth-child(5) {
+    left: 75%;
+    background: #bcb8b8;
+}
+
+#progressBar span:nth-child(6) {
+    left: 100%;
+    background: #bcb8b8;
+}
+
+.body {
+    background-color: #795548d4
+}
+
+.jumbotron-fluid {
+    background: #fff;
+}
+
+.fa-instagram {
+    color: #E91E63
+}
+
+.fa-facebook-square {
+    color: #3147be;
+}
+
+.fa-twitter {
+    color: #2196f3e0;
+}
+
+.fa-github {
+    color: #5c1717cf
+}
+
+.d-md-block h1 {
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.d-md-block p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+/* 導入技能圖表 */
+
+
+/*
+  =================
+  Bar Graph 
+  ================
+  */
+
+.bar-graph-container {
+    border-left: 4px solid #000;
+    border-bottom: 4px solid #000;
+    width: 85%;
+    overflow: hidden;
+}
+
+.bar-graph-container p {
+    padding: 18px;
+    color: white;
+    font-weight: 600
+}
+
+#skillgraph {
+    padding-left: 88px
+}
+
+.fa-globe {
+    color: #03a9f4
+}
+
+.fa-code {
+    color: black
+}
+
+.fa-network-wired {
+    color: #c4c1c1
+}
+
+.fa-html5 {
+    color: blue
+}
+
+.fa-evernote {
+    color: green
+}
+
+@-webkit-keyframes slide-left {
+    0% {
+        -webkit-transform: translateX(-200%);
+    }
+    70% {
+        -webkit-transform: translateX(2%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        -webkit-transform: translateX(-200%);
+    }
+    70% {
+        -webkit-transform: translateX(2%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+.bar-container {
+    background-color: rgba(231, 184, 239, 0.6);
+}
+
+.jp {
+    width: 45%;
+    background-color: #a378aae8;
+    animation: slide-left 0.9s ease-in-out 1s both;
+    -webkit-animation: slide-left 0.9s ease-in-out 1s both;
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+}
+
+.eng {
+    width: 92%;
+    background-color: #a378aae8;
+    animation: slide-left 1s ease-in-out 1s both;
+    -webkit-animation: slide-left 1s ease-in-out 1s both;
+    animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+}
+
+.Python {
+    width: 85%;
+    background-color: #a378aae8;
+    animation: slide-left 1s ease-in-out 1s both;
+    -webkit-animation: slide-left 1s ease-in-out 1s both;
+    animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+}
+
+.R {
+    width: 48%;
+    background-color: #a378aae8;
+    animation: slide-left 1s ease-in-out 1s both;
+    -webkit-animation: slide-left 1s ease-in-out 1s both;
+    animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+}
+
+.mining {
+    width: 71%;
+    background-color: #a378aae8;
+    animation: slide-left 1s ease-in-out 1s both;
+    -webkit-animation: slide-left 1s ease-in-out 1s both;
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+}
+
+.html {
+    width: 60%;
+    background-color: #a378aae8;
+    animation: slide-left 1s ease-in-out 1s both;
+    -webkit-animation: slide-left 1s ease-in-out 1s both;
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+}
+
+.html {
+    width: 60%;
+    background-color: #a378aae8;
+    animation: slide-left 1s ease-in-out 1s both;
+    -webkit-animation: slide-left 1s ease-in-out 1s both;
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+}
+
+.evernote {
+    width: 85%;
+    background-color: #a378aae8;
+    animation: slide-left 1s ease-in-out 1s both;
+    -webkit-animation: slide-left 1s ease-in-out 1s both;
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+}
+
+
+/* 引用hover效果 */
+
+.mh6 {
+    transition: all 0.5s;
+    border: 1px solid #CDDC39;
+    position: relative;
+}
+
+.mh6 span {
+    z-index: 2;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.mh6:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    background-color: #79554852;
+    transition: all 0.4s;
+    transform: scale(1, 0.5);
+}
+
+.mh6:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+}
